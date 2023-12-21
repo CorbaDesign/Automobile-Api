@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>PaymentDataTest.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PaymentDataTest.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.automobile.routing</span>
+
+<span class="s1">import com.automobile.routing.PaymentData</span>
+<span class="s1">import org.junit.jupiter.api.Assertions.assertEquals</span>
+<span class="s1">import org.junit.jupiter.api.Test</span>
+<span class="s1">import java.time.LocalDateTime</span>
+
+<span class="s0">class </span><span class="s1">PaymentDataTest {</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getId() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getId method returned the expected payment ID.</span>
+        <span class="s0">val </span><span class="s1">paymentId = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(paymentId, </span><span class="s3">100.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(paymentId, paymentData.id)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getAmount() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getAmount method returned the expected payment amount, which is 100.0.</span>
+        <span class="s0">val </span><span class="s1">paymentAmount = </span><span class="s3">100.0</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, paymentAmount, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(paymentAmount, paymentData.amount)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getCurrency() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getCurrency method returned the expected currency, which is &quot;USD&quot;.</span>
+        <span class="s0">val </span><span class="s1">currency = </span><span class="s4">&quot;USD&quot;</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100.0</span><span class="s1">, currency, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(currency, paymentData.currency)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getPaymentMethod() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getPaymentMethod method returned the expected payment method, which is &quot;Credit Card&quot;.</span>
+        <span class="s0">val </span><span class="s1">paymentMethod = </span><span class="s4">&quot;Credit Card&quot;</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, paymentMethod, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(paymentMethod, paymentData.paymentMethod)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getDateTime() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getDateTime method returned the expected date and time value, which is the current date and time.</span>
+        <span class="s0">val </span><span class="s1">dateTime = LocalDateTime.now()</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, dateTime, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(dateTime, paymentData.dateTime)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getCarReservationID() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getCarReservationID method returned the expected car reservation ID, which is 1.</span>
+        <span class="s0">val </span><span class="s1">carReservationID = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, LocalDateTime.now(), carReservationID)</span>
+        <span class="s1">assertEquals(carReservationID, paymentData.carReservationID)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component1() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component1 method returned the expected payment ID.</span>
+        <span class="s0">val </span><span class="s1">paymentId = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(paymentId, </span><span class="s3">100.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(paymentId, paymentData.component1())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component2() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component2 method returned the expected payment amount, which is 100.0.</span>
+        <span class="s0">val </span><span class="s1">paymentAmount = </span><span class="s3">100.0</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, paymentAmount, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(paymentAmount, paymentData.component2())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component3() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component3 method returned the expected currency, which is &quot;USD&quot;.</span>
+        <span class="s0">val </span><span class="s1">currency = </span><span class="s4">&quot;USD&quot;</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100.0</span><span class="s1">, currency, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(currency, paymentData.component3())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component4() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component4 method returned the expected payment method, which is &quot;Credit Card&quot;.</span>
+        <span class="s0">val </span><span class="s1">paymentMethod = </span><span class="s4">&quot;Credit Card&quot;</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, paymentMethod, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(paymentMethod, paymentData.component4())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component5() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component5 method returned the expected date and time value, which is the current date and time.</span>
+        <span class="s0">val </span><span class="s1">dateTime = LocalDateTime.now()</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, dateTime, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(dateTime, paymentData.component5())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component6() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component6 method returned the expected car reservation ID, which is 1.</span>
+        <span class="s0">val </span><span class="s1">carReservationID = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">paymentData = PaymentData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s4">&quot;Credit Card&quot;</span><span class="s1">, LocalDateTime.now(), carReservationID)</span>
+        <span class="s1">assertEquals(carReservationID, paymentData.component6())</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

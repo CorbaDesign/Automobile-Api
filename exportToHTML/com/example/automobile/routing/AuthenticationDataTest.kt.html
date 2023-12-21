@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>AuthenticationDataTest.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+AuthenticationDataTest.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.automobile.routing</span>
+
+<span class="s1">import org.junit.jupiter.api.Assertions.assertEquals</span>
+<span class="s1">import org.junit.jupiter.api.Assertions.assertTrue</span>
+<span class="s1">import org.junit.jupiter.api.Test</span>
+<span class="s1">import org.mindrot.jbcrypt.BCrypt</span>
+
+<span class="s0">class </span><span class="s1">AuthenticationDataTest {</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">hashedPassword() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The hashedPassword method successfully hashed the password and it can be verified using BCrypt.</span>
+        <span class="s0">val </span><span class="s1">password = </span><span class="s3">&quot;password123&quot;</span>
+        <span class="s0">val </span><span class="s1">hashedPassword = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, password).hashedPassword()</span>
+        <span class="s1">assertTrue(BCrypt.checkpw(password, hashedPassword))</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getEmail() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getEmail method returned the expected email address &quot;test@example.com&quot;.</span>
+        <span class="s0">val </span><span class="s1">email = </span><span class="s3">&quot;test@example.com&quot;</span>
+        <span class="s0">val </span><span class="s1">authenticationData = AuthenticationData(email, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s1">assertEquals(email, authenticationData.email)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">setEmail() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The setEmail method successfully updated the email address to &quot;newEmail@example.com&quot;.</span>
+        <span class="s0">val </span><span class="s1">authenticationData = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s1">authenticationData.email = </span><span class="s3">&quot;newEmail@example.com&quot;</span>
+        <span class="s1">assertEquals(</span><span class="s3">&quot;newEmail@example.com&quot;</span><span class="s1">, authenticationData.email)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getPassword() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getPassword method returned the expected password &quot;password123&quot;.</span>
+        <span class="s0">val </span><span class="s1">password = </span><span class="s3">&quot;password123&quot;</span>
+        <span class="s0">val </span><span class="s1">authenticationData = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, password)</span>
+        <span class="s1">assertEquals(password, authenticationData.password)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">setPassword() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The setPassword method successfully updated the password to &quot;newPassword123&quot;.</span>
+        <span class="s0">val </span><span class="s1">authenticationData = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s1">authenticationData.password = </span><span class="s3">&quot;newPassword123&quot;</span>
+        <span class="s1">assertEquals(</span><span class="s3">&quot;newPassword123&quot;</span><span class="s1">, authenticationData.password)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">copy() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The copy method successfully created a copy of the authentication data with the same email and password.</span>
+        <span class="s0">val </span><span class="s1">authenticationData = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">copiedData = authenticationData.copy()</span>
+        <span class="s1">assertEquals(authenticationData.email, copiedData.email)</span>
+        <span class="s1">assertEquals(authenticationData.password, copiedData.password)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">testToString() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The toString method produced a string containing the email and password information.</span>
+        <span class="s0">val </span><span class="s1">authenticationData = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s1">assertTrue(authenticationData.toString().contains(</span><span class="s3">&quot;email=test@example.com&quot;</span><span class="s1">))</span>
+        <span class="s1">assertTrue(authenticationData.toString().contains(</span><span class="s3">&quot;password=password123&quot;</span><span class="s1">))</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">testHashCode() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The hashCode method produced the same hash code for two AuthenticationData objects with the same email and password.</span>
+        <span class="s0">val </span><span class="s1">authenticationData1 = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">authenticationData2 = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s1">assertEquals(authenticationData1.hashCode(), authenticationData2.hashCode())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">testEquals() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The equals method correctly determined that two AuthenticationData objects with the same email and password are equal.</span>
+        <span class="s0">val </span><span class="s1">authenticationData1 = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">authenticationData2 = AuthenticationData(</span><span class="s3">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">&quot;password123&quot;</span><span class="s1">)</span>
+        <span class="s1">assertTrue(authenticationData1 == authenticationData2)</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

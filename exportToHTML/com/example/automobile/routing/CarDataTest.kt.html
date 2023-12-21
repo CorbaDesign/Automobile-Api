@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>CarDataTest.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CarDataTest.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.automobile.routing</span>
+
+<span class="s1">import com.example.automobile.routing.CarData</span>
+<span class="s1">import org.junit.jupiter.api.Assertions.assertEquals</span>
+<span class="s1">import org.junit.jupiter.api.Test</span>
+
+<span class="s0">class </span><span class="s1">CarDataTest {</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getId() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getId method returned the expected result of 1 for the car's ID.</span>
+        <span class="s0">val </span><span class="s1">carId = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(carId, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, </span><span class="s3">5</span><span class="s1">, </span><span class="s3">4</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s3">50.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(carId, carData.id)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getLicencePlate() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getLicencePlate method returned the expected license plate &quot;ABC123&quot;.</span>
+        <span class="s0">val </span><span class="s1">licencePlate = </span><span class="s4">&quot;ABC123&quot;</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, licencePlate, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, </span><span class="s3">5</span><span class="s1">, </span><span class="s3">4</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s3">50.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(licencePlate, carData.licencePlate)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getCarBrand() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getCarBrand method returned the expected car brand &quot;Toyota&quot;.</span>
+        <span class="s0">val </span><span class="s1">carBrand = </span><span class="s4">&quot;Toyota&quot;</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, carBrand, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, </span><span class="s3">5</span><span class="s1">, </span><span class="s3">4</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s3">50.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(carBrand, carData.carBrand)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getVehicleType() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getVehicleType method returned the expected vehicle type &quot;Sedan&quot;.</span>
+        <span class="s0">val </span><span class="s1">vehicleType = </span><span class="s4">&quot;Sedan&quot;</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, vehicleType, </span><span class="s3">5</span><span class="s1">, </span><span class="s3">4</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s3">50.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(vehicleType, carData.vehicleType)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getAmountOfPassengers() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getAmountOfPassengers method returned the expected number of passengers, which is 5.</span>
+        <span class="s0">val </span><span class="s1">amountOfPassengers = </span><span class="s3">5</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, amountOfPassengers, </span><span class="s3">4</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s3">50.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(amountOfPassengers, carData.amountOfPassengers)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getAmountOfDoors() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getAmountOfDoors method returned the expected number of doors, which is 4.</span>
+        <span class="s0">val </span><span class="s1">amountOfDoors = </span><span class="s3">4</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, </span><span class="s3">5</span><span class="s1">, amountOfDoors, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s3">50.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(amountOfDoors, carData.amountOfDoors)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getAutomatic() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getAutomatic method returned the expected value of true for automatic transmission.</span>
+        <span class="s0">val </span><span class="s1">automatic = </span><span class="s0">true</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, </span><span class="s3">5</span><span class="s1">, </span><span class="s3">4</span><span class="s1">, automatic, </span><span class="s0">true</span><span class="s1">, </span><span class="s3">50.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(automatic, carData.automatic)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getGpsAvailable() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getGpsAvailable method returned the expected value of true for GPS availability.</span>
+        <span class="s0">val </span><span class="s1">gpsAvailable = </span><span class="s0">true</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, </span><span class="s3">5</span><span class="s1">, </span><span class="s3">4</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, gpsAvailable, </span><span class="s3">50.0</span><span class="s1">, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(gpsAvailable, carData.gpsAvailable)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getCarPriceAmount() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getCarPriceAmount method returned the expected car price amount of 50.0.</span>
+        <span class="s0">val </span><span class="s1">carPriceAmount = </span><span class="s3">50.0</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, </span><span class="s3">5</span><span class="s1">, </span><span class="s3">4</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, carPriceAmount, </span><span class="s4">&quot;USD&quot;</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(carPriceAmount, carData.carPriceAmount)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getCarPriceCurrency() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getCarPriceCurrency method returned the expected car price currency &quot;USD&quot;.</span>
+        <span class="s0">val </span><span class="s1">carPriceCurrency = </span><span class="s4">&quot;USD&quot;</span>
+        <span class="s0">val </span><span class="s1">carData = CarData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;ABC123&quot;</span><span class="s1">, </span><span class="s4">&quot;Toyota&quot;</span><span class="s1">, </span><span class="s4">&quot;Sedan&quot;</span><span class="s1">, </span><span class="s3">5</span><span class="s1">, </span><span class="s3">4</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s3">50.0</span><span class="s1">, carPriceCurrency, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(carPriceCurrency, carData.carPriceCurrency)</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

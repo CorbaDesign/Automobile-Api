@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>AccountDataTest.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+AccountDataTest.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.automobile.routing</span>
+
+<span class="s1">import org.junit.jupiter.api.Assertions.assertEquals</span>
+
+<span class="s0">class </span><span class="s1">AccountDataTest {</span>
+
+    <span class="s1">@org.junit.jupiter.api.Test</span>
+    <span class="s0">fun </span><span class="s1">getId() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getId method returned the expected result of 1 for the account's ID.</span>
+        <span class="s0">val </span><span class="s1">accountData = AccountResponseData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">45</span><span class="s1">)</span>
+        <span class="s1">assertEquals(</span><span class="s3">1</span><span class="s1">, accountData.id)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@org.junit.jupiter.api.Test</span>
+    <span class="s0">fun </span><span class="s1">getEmail() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getEmail method returned the expected email address &quot;test@example.com&quot;.</span>
+        <span class="s0">val </span><span class="s1">accountData = AccountResponseData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">45</span><span class="s1">)</span>
+        <span class="s1">assertEquals(</span><span class="s4">&quot;test@example.com&quot;</span><span class="s1">, accountData.email)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@org.junit.jupiter.api.Test</span>
+    <span class="s0">fun </span><span class="s1">getUserProfileID() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getUserProfileID method returned the expected user profile ID of 45.</span>
+        <span class="s0">val </span><span class="s1">accountData = AccountResponseData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;test@example.com&quot;</span><span class="s1">, </span><span class="s3">45</span><span class="s1">)</span>
+        <span class="s1">assertEquals(</span><span class="s3">45</span><span class="s1">, accountData.userProfileID)</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

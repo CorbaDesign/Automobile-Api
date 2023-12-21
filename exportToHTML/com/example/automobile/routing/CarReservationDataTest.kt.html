@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>CarReservationDataTest.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CarReservationDataTest.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.automobile.routing</span>
+
+<span class="s1">import com.automobile.routing.CarReservationData</span>
+<span class="s1">import org.junit.jupiter.api.Assertions.assertEquals</span>
+<span class="s1">import org.junit.jupiter.api.Test</span>
+<span class="s1">import java.time.LocalDateTime</span>
+
+<span class="s0">class </span><span class="s1">CarReservationDataTest {</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getId() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getId method returned the expected car reservation ID.</span>
+        <span class="s0">val </span><span class="s1">carReservationId = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(carReservationId, LocalDateTime.now(), LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(carReservationId, carReservationData.id)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getDateTimeFrom() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getDateTimeFrom method returned the expected date and time from value, which is the current date and time.</span>
+        <span class="s0">val </span><span class="s1">dateTimeFrom = LocalDateTime.now()</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, dateTimeFrom, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(dateTimeFrom, carReservationData.dateTimeFrom)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getDateTimeUntil() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getDateTimeUntil method returned the expected date and time until value, which is the current date and time.</span>
+        <span class="s0">val </span><span class="s1">dateTimeUntil = LocalDateTime.now()</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, LocalDateTime.now(), dateTimeUntil, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(dateTimeUntil, carReservationData.dateTimeUntil)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getUserProfileID() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getUserProfileID method returned the expected user profile ID, which is 1.</span>
+        <span class="s0">val </span><span class="s1">userProfileID = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, LocalDateTime.now(), LocalDateTime.now(), userProfileID, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(userProfileID, carReservationData.userProfileID)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getCarID() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getCarID method returned the expected car ID, which is 1.</span>
+        <span class="s0">val </span><span class="s1">carID = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, LocalDateTime.now(), LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">, carID)</span>
+        <span class="s1">assertEquals(carID, carReservationData.carID)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component1() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component1 method returned the expected car reservation ID.</span>
+        <span class="s0">val </span><span class="s1">carReservationId = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(carReservationId, LocalDateTime.now(), LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(carReservationId, carReservationData.component1())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component2() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component2 method returned the expected date and time from value, which is the current date and time.</span>
+        <span class="s0">val </span><span class="s1">dateTimeFrom = LocalDateTime.now()</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, dateTimeFrom, LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(dateTimeFrom, carReservationData.component2())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component3() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component3 method returned the expected date and time until value, which is the current date and time.</span>
+        <span class="s0">val </span><span class="s1">dateTimeUntil = LocalDateTime.now()</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, LocalDateTime.now(), dateTimeUntil, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(dateTimeUntil, carReservationData.component3())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component4() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component4 method returned the expected user profile ID, which is 1.</span>
+        <span class="s0">val </span><span class="s1">userProfileID = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, LocalDateTime.now(), LocalDateTime.now(), userProfileID, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(userProfileID, carReservationData.component4())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">component5() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The component5 method returned the expected car ID, which is 1.</span>
+        <span class="s0">val </span><span class="s1">carID = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, LocalDateTime.now(), LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">, carID)</span>
+        <span class="s1">assertEquals(carID, carReservationData.component5())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">copy() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The copy method successfully created a copy of the car reservation data with the same properties.</span>
+        <span class="s0">val </span><span class="s1">carReservationData = CarReservationData(</span><span class="s3">1</span><span class="s1">, LocalDateTime.now(), LocalDateTime.now(), </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">copiedCarReservationData = carReservationData.copy()</span>
+        <span class="s1">assertEquals(carReservationData.id, copiedCarReservationData.id)</span>
+        <span class="s1">assertEquals(carReservationData.dateTimeFrom, copiedCarReservationData.dateTimeFrom)</span>
+        <span class="s1">assertEquals(carReservationData.dateTimeUntil, copiedCarReservationData.dateTimeUntil)</span>
+        <span class="s1">assertEquals(carReservationData.userProfileID, copiedCarReservationData.userProfileID)</span>
+        <span class="s1">assertEquals(carReservationData.carID, copiedCarReservationData.carID)</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

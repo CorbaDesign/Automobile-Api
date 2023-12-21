@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>UserProfileDataTest.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+UserProfileDataTest.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.automobile.routing</span>
+
+<span class="s1">import com.example.automobile.routing.UserProfileData</span>
+<span class="s1">import org.junit.jupiter.api.Assertions.assertEquals</span>
+<span class="s1">import org.junit.jupiter.api.Test</span>
+<span class="s1">import java.time.LocalDate</span>
+
+<span class="s0">class </span><span class="s1">UserProfileDataTest {</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getId() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getId method returned the expected result of the user's ID.</span>
+        <span class="s0">val </span><span class="s1">userId = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">userProfileData = UserProfileData(userId, </span><span class="s4">&quot;John&quot;</span><span class="s1">, </span><span class="s4">&quot;Doe&quot;</span><span class="s1">, LocalDate.of(</span><span class="s3">1980</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">), </span><span class="s3">123456789</span><span class="s1">)</span>
+        <span class="s1">assertEquals(userId, userProfileData.id)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getFistName() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getFirstName method returned the expected first name &quot;John&quot;.</span>
+        <span class="s0">val </span><span class="s1">firstName = </span><span class="s4">&quot;John&quot;</span>
+        <span class="s0">val </span><span class="s1">userProfileData = UserProfileData(</span><span class="s3">1</span><span class="s1">, firstName, </span><span class="s4">&quot;Doe&quot;</span><span class="s1">, LocalDate.of(</span><span class="s3">1980</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">), </span><span class="s3">123456789</span><span class="s1">)</span>
+        <span class="s1">assertEquals(firstName, userProfileData.firstName)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getLastName() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getLastName method returned the expected last name &quot;Doe&quot;.</span>
+        <span class="s0">val </span><span class="s1">lastName = </span><span class="s4">&quot;Doe&quot;</span>
+        <span class="s0">val </span><span class="s1">userProfileData = UserProfileData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;John&quot;</span><span class="s1">, lastName, LocalDate.of(</span><span class="s3">1980</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">), </span><span class="s3">123456789</span><span class="s1">)</span>
+        <span class="s1">assertEquals(lastName, userProfileData.lastName)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getDateOfBirth() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getDateOfBirth method returned the expected date of birth &quot;1980-01-01&quot;.</span>
+        <span class="s0">val </span><span class="s1">dateOfBirth = LocalDate.of(</span><span class="s3">1980</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">userProfileData = UserProfileData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;John&quot;</span><span class="s1">, </span><span class="s4">&quot;Doe&quot;</span><span class="s1">, dateOfBirth, </span><span class="s3">123456789</span><span class="s1">)</span>
+        <span class="s1">assertEquals(dateOfBirth, userProfileData.dateOfBirth)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getDriversLicenceNumber() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getDriversLicenceNumber method returned the expected driver's license number &quot;123456789&quot;.</span>
+        <span class="s0">val </span><span class="s1">driversLicenceNumber = </span><span class="s3">123456789</span>
+        <span class="s0">val </span><span class="s1">userProfileData = UserProfileData(</span><span class="s3">1</span><span class="s1">, </span><span class="s4">&quot;John&quot;</span><span class="s1">, </span><span class="s4">&quot;Doe&quot;</span><span class="s1">, LocalDate.of(</span><span class="s3">1980</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">), driversLicenceNumber)</span>
+        <span class="s1">assertEquals(driversLicenceNumber, userProfileData.driversLicenceNumber)</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

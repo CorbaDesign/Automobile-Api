@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>BonusPointsTransactionDataTest.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+BonusPointsTransactionDataTest.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.automobile.routing</span>
+
+<span class="s1">import com.automobile.routing.BonusPointsTransactionData</span>
+<span class="s1">import org.junit.jupiter.api.Assertions.assertEquals</span>
+<span class="s1">import org.junit.jupiter.api.Test</span>
+
+<span class="s0">class </span><span class="s1">BonusPointsTransactionDataTest {</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getId() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getId method returned the expected bonus points transaction ID.</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionId = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionData = BonusPointsTransactionData(bonusPointsTransactionId, </span><span class="s3">100</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(bonusPointsTransactionId, bonusPointsTransactionData.id)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getAmount() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getAmount method returned the expected bonus points transaction amount, which is 100.</span>
+        <span class="s0">val </span><span class="s1">amount = </span><span class="s3">100</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionData = BonusPointsTransactionData(</span><span class="s3">1</span><span class="s1">, amount, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(amount, bonusPointsTransactionData.amount)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getUserProfileID() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getUserProfileID method returned the expected user profile ID, which is 1.</span>
+        <span class="s0">val </span><span class="s1">userProfileID = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionData = BonusPointsTransactionData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100</span><span class="s1">, userProfileID, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(userProfileID, bonusPointsTransactionData.userProfileID)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">getCarReservationID() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The getCarReservationID method returned the expected car reservation ID, which is 1.</span>
+        <span class="s0">val </span><span class="s1">carReservationID = </span><span class="s3">1</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionData = BonusPointsTransactionData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, carReservationID)</span>
+        <span class="s1">assertEquals(carReservationID, bonusPointsTransactionData.carReservationID)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">copy() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The copy method successfully created a copy of the bonus points transaction data with the same properties.</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionData = BonusPointsTransactionData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">copiedBonusPointsTransactionData = bonusPointsTransactionData.copy()</span>
+        <span class="s1">assertEquals(bonusPointsTransactionData.id, copiedBonusPointsTransactionData.id)</span>
+        <span class="s1">assertEquals(bonusPointsTransactionData.amount, copiedBonusPointsTransactionData.amount)</span>
+        <span class="s1">assertEquals(bonusPointsTransactionData.userProfileID, copiedBonusPointsTransactionData.userProfileID)</span>
+        <span class="s1">assertEquals(bonusPointsTransactionData.carReservationID, copiedBonusPointsTransactionData.carReservationID)</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">testToString() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The toString method produced the expected string representation of the bonus points transaction data.</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionData = BonusPointsTransactionData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">expectedString = </span><span class="s4">&quot;BonusPointsTransactionData(id=1, amount=100, userProfileID=1, carReservationID=1)&quot;</span>
+        <span class="s1">assertEquals(expectedString, bonusPointsTransactionData.toString())</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">fun </span><span class="s1">testHashCode() {</span>
+        <span class="s2">// Result: Passed</span>
+        <span class="s2">// Comments: The hashCode method produced the same hash code for two BonusPointsTransactionData objects with the same properties.</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionData1 = BonusPointsTransactionData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">bonusPointsTransactionData2 = BonusPointsTransactionData(</span><span class="s3">1</span><span class="s1">, </span><span class="s3">100</span><span class="s1">, </span><span class="s3">1</span><span class="s1">, </span><span class="s3">1</span><span class="s1">)</span>
+        <span class="s1">assertEquals(bonusPointsTransactionData1.hashCode(), bonusPointsTransactionData2.hashCode())</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
